@@ -227,8 +227,128 @@ rotate(radians(35));
 rect(0, 0, 22, 48);
 popMatrix();
 
-fill(182,74,36); // bottom orange box
+fill(182,74,36); // bottom orange square
 rect(152, 550, 36, 36);
 
 fill(215,161,38); // bottom yellow rect
 rect(390, 519 , 182, 22);
+
+pushMatrix();
+translate(445, 568);
+fill(196,162,31); // yellow rect 1
+noStroke();
+rotate(radians(262));
+rect(0, 0, 14, 73);
+popMatrix();
+
+pushMatrix();
+translate(485, 582);
+fill(196,162,31); // yellow rect 2
+noStroke();
+rotate(radians(262));
+rect(0, 0, 11, 28);
+popMatrix();
+
+pushMatrix();
+translate(505, 582);
+fill(209,165,181); //  pink rect
+noStroke();
+rotate(radians(35));
+rect(0, 0, 50, 100);
+popMatrix();
+
+pushMatrix();
+translate(560, 598);
+fill(228); // white mask for pink area
+noStroke();
+rotate(radians(45));
+rect(0, 0, 45, 125);
+popMatrix();
+
+pushMatrix();
+translate(88, 610);
+fill(191,82,43); // bottom orange stripe 1
+noStroke();
+rotate(radians(35));
+rect(0, 0, 12, 106);
+popMatrix();
+
+pushMatrix();
+translate(87, 647);
+fill(207,170,42); // bottom yellow rect 2
+noStroke();
+rotate(radians(35));
+rect(0, 0, 14, 35);
+popMatrix();
+
+pushMatrix();
+translate(117, 635);
+fill(210,150,34); // bottom yellow rect 3
+noStroke();
+rotate(radians(35));
+rect(0, 0, 12, 97);
+popMatrix();
+
+pushMatrix();
+translate(132, 641);
+fill(203,168,37); // bottom yellow square 4
+noStroke();
+rotate(radians(35));
+rect(0, 0, 25, 23 );
+popMatrix();
+
+pushMatrix();
+translate(144, 673);
+fill(36,36,36); // bottom black rect 5
+noStroke();
+rotate(radians(35));
+rect(0, 0, 67, 95);
+popMatrix();
+
+pushMatrix();
+translate(281, 580);
+fill(210,149,28); // bottom yellow rect 6
+noStroke();
+rotate(radians(35));
+rect(0, 0, 27, 210);
+popMatrix();
+
+pushMatrix();
+translate(295, 607);
+fill(40); // bottom black rect 7
+noStroke();
+rotate(radians(35));
+rect(0, 0, 35, 175);
+popMatrix();
+
+pushMatrix();
+translate(310, 646);
+fill(215,148,19); // bottom orange rect 8
+noStroke();
+rotate(radians(35));
+rect(0, 0, 15, 130);
+popMatrix();
+
+pushMatrix();
+translate(311, 669);
+fill(204,167,30); // bottom yellow rect 9
+noStroke();
+rotate(radians(35));
+rect(0, 0, 19, 98);
+popMatrix();
+
+pushMatrix();
+translate(374, 612);
+fill(172,63,36); // bottom orange rect 10
+noStroke();
+rotate(radians(35));
+rect(0, 0, 20, 145);
+popMatrix();
+
+pushMatrix();
+translate(385, 643);
+fill(211,175,42); // bottom yellow  rect 11
+noStroke();
+rotate(radians(35));
+rect(0, 0, 17, 66);
+popMatrix();

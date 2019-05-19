@@ -1,0 +1,8 @@
+beginShape();
+curveVertex(286.0,192.0);
+curveVertex(286.0,199.0);
+curveVertex(325.0,179.0);
+curveVertex(323.0,173.0);
+curveVertex(290.0,188.0);
+curveVertex(288.0,190.0);
+endShape();

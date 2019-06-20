@@ -1,8 +1,13 @@
 //https://data.nasa.gov/resource/gh4g-9sfh.json
 //https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh
 
+//http://mrfeinberg.com/peasycam/
 import peasy.*;
+
+//https://www.plethora-project.com/plethora-library
 import plethora.core.*;
+
+//http://toxiclibs.org/
 import toxi.geom.*;
 
 PImage worldImage;
@@ -52,7 +57,7 @@ void draw() {
   background(0);
   smooth();
 
-  if (frameCount % 5 == 0) {
+  if (frameCount % 8 == 0) {
     currentYear ++;
   }
 
@@ -73,4 +78,9 @@ void draw() {
   for (Meteo m : allMeteors) {
     m.run();
   }
+  // Add label to the sketch
+  textSize(20);
+  fill(50);
+  text("Assignment 7: OOP", int(width/3), 40);
+  text("Meteor strikes or discoveries based on location, mass and year", int(width/2.25), 575);
 }

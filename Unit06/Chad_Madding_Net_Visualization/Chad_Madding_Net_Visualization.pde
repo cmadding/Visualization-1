@@ -32,7 +32,7 @@ void draw() {
   for (TableRow row : table.rows()) {
 
     int year = row.getInt("year");
-    String name = row.getString("name");
+    //String name = row.getString("name");
     float mass = row.getFloat("mass");
     float reclat = row.getFloat("reclat");
     float reclong = row.getFloat("reclong");
@@ -54,8 +54,8 @@ void draw() {
       stroke(255, 0, 0);
       strokeWeight(mapMass);
       ellipse(mapX, mapY, mapMass, mapMass);
-      stroke(0,50);
-      curve(100, 200, mapMass, mapMass,mapX, mapY, 200, 200);
+      stroke(0, 50);
+      curve(100, 200, mapMass, mapMass, mapX, mapY, 200, 200);
       //point(mapX, mapY);
     }//else {
     //stroke(255, 0, 0);
@@ -63,10 +63,10 @@ void draw() {
     //noFill();
     //ellipse(mapX, mapY, mapMass, mapMass);
   }
-  
+
   // Add label to the sketch
   textSize(20);
   fill(50);
   text("Assignment 6: Getting Data Into Processing", int(width/3), 40);
-  text("Meteor strikes or discoveries based on size and year", int(width/2), 575);
+  text("Meteor strikes or discoveries based on location, mass and year", int(width/2.25), 575);
 }

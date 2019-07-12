@@ -1,3 +1,8 @@
+//Use mouse buttons and wheel to move around image
+//Hold down mouse wheel button to move the picture around.
+//Mouse wheel will zoom in and out picture.
+//Hold down Left mouse button to rotate picture.
+
 //https://data.nasa.gov/resource/gh4g-9sfh.json
 //https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh
 

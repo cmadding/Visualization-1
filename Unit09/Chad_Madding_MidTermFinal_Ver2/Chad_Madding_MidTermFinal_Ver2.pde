@@ -9,7 +9,6 @@ ControlP5 cp5year;
 ControlP5 cp5mass;
 
 Table table;
-GeoMap geoMap;
 
 //Page 3 buttons
 int rectX, rectY;      // Position of square button
@@ -53,6 +52,12 @@ int currentMass=50000;
 
 PImage chart1;
 PImage meteor;
+
+//Page 4
+GeoMap geoMap;
+int hits;
+String name;
+int id;
 
 color background = #D8D8D8;
 Menu menu;
@@ -283,31 +288,55 @@ void draw() {
   } else if (menu.getSelected() == "Meteorite Fall Statistics") {
     cp5year.hide();
     cp5mass.hide();
+
     // Set up text appearance.
     textAlign(LEFT, BOTTOM);
     textSize(18);
     background(255);  // Ocean colour
     strokeWeight(1);
-    stroke(255, 50);              // Boundary colour
+    stroke(255, 50);  // Boundary colour
+
     // Draw entire world map.
     fill(208);        // Land colour
-    geoMap.draw();              // Draw the entire map.
+    geoMap.draw();    // Draw the entire map.
+
+    // Draw countries - lighter and darker for hits 
+    for (int id : geoMap.getFeatures().keySet())
+    {
+      String countryCode = geoMap.getAttributeTable().findRow(str(id), 0).getString("ISO_A3");    
+      hits = geoMap.getAttributeTable().findRow(str(id), 0).getInt("HITS");
+
+      if (hits != -1)       // Table row matches country code
+      {
+        hits = geoMap.getAttributeTable().findRow(str(id), 0).getInt("HITS");
+
+        fill(40, 70, 188, hits*4);
+      } else  // No data found in table.
+      {
+        fill(40, 70, 188);
+      }
+      geoMap.draw(id); // Draw country
+    }
+
+
     // Query the country at the mouse position.
-    int id = geoMap.getID(mouseX, mouseY);
+    id = geoMap.getID(mouseX, mouseY);
+
     if (id != -1)
     {
-      String name = geoMap.getAttributeTable().findRow(str(id), 0).getString("NAME");
-      int hits = geoMap.getAttributeTable().findRow(str(id), 0).getInt("HITS");
-      fill(40, 70, 188, hits+30);
+      name = geoMap.getAttributeTable().findRow(str(id), 0).getString("NAME");
+      hits = geoMap.getAttributeTable().findRow(str(id), 0).getInt("HITS");
+      fill(255, 3, 7, hits+100);
       strokeWeight(1);
-      stroke(0, 50);
-      geoMap.draw(id);
+      stroke(0, 100);
+      geoMap.draw(id);// Draw country
 
-      //String name = geoMap.getAttributeTable().findRow(str(id), 0).getString("NAME");
+      //Mouseover Text Color
       fill(0);
       text(name, mouseX+5, mouseY-5);
       text(hits, mouseX+15, mouseY+15);
     }
+
     textSize(20);
     fill(50);
     text("Meteorite Falls by Country", 450, 70);
@@ -403,7 +432,6 @@ void update(int x, int y) {
     circleOver = rectOver = circleOver2 = circleOver3 = circleOver4 = circleOver5 = circleOver6 = circleOver7 = circleOver8 = false;
   }
 }
-
 
 
 boolean overRect(int x, int y, int width, int height) {
